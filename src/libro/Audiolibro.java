@@ -4,6 +4,9 @@
  */
 package libro;
 
+import java.util.ArrayList;
+import megaferia.Editorial;
+import megaferia.personas.Autor;
 import megaferia.personas.Narrador;
 
 /**
@@ -14,5 +17,11 @@ public class Audiolibro extends Libro{
     private int duracion;
     private Narrador narrador;
 
-    
+    public Audiolibro(String titulo, ArrayList<Autor> autores, String isbn, String genero, String formato, float valor, Editorial editorial, int duracion, Narrador narrador) {
+        super(titulo, autores, isbn, genero, formato, valor, editorial);
+        this.duracion = duracion;
+        this.narrador = narrador;
+        
+        this.narrador.addLibro(this);
+    }
 }

@@ -20,4 +20,21 @@ public abstract class Libro {
     protected float valor;
     protected Editorial editorial;
     protected ArrayList<Autor> autores; 
+
+    public Libro(String titulo, ArrayList<Autor> autores, String isbn, String genero, String formato, float valor, Editorial editorial) {
+        this.titulo = titulo;
+        this.isbn = isbn;
+        this.genero = genero;
+        this.formato = formato;
+        this.valor = valor;
+        this.editorial = editorial;
+        this.autores = autores;
+        
+        for(Autor autor : this.autores) {
+            autor.addLibro(this);
+        }
+        this.editorial.AddLibro(this);
+    }
+    
+    
 }

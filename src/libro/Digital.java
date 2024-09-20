@@ -5,6 +5,8 @@
 package libro;
 
 import java.util.ArrayList;
+import megaferia.Editorial;
+import megaferia.personas.Autor;
 
 /**
  *
@@ -13,4 +15,10 @@ import java.util.ArrayList;
 public class Digital extends Libro{
     private boolean hasHipervinculo;
     private ArrayList<String> hipervinculos; 
+    
+    public Digital(String titulo, ArrayList<Autor> autores, String isbn, String genero, String formato, float valor, Editorial editorial, boolean hasHipervinculo, ArrayList<String> Hipervinculos) {
+        super(titulo, autores, isbn, genero, formato, valor, editorial);
+        this.hasHipervinculo = hasHipervinculo;
+        this.hipervinculos = Hipervinculos;
+    }
 }

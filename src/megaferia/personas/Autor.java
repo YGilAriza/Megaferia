@@ -13,4 +13,17 @@ import libro.Libro;
  */
 public class Autor extends Persona {
     private ArrayList<Libro> libros;
+    
+    public Autor(String nombre, int cedula, ArrayList<Libro> libros) {
+            super(nombre, cedula);
+            this.libros = libros;
+        }
+    
+    public boolean addLibro(Libro libro) {
+        if(!this.libros.contains(libro)) {
+            this.libros.add(libro);
+            return true;
+        }
+        return false;
+    }
 }
